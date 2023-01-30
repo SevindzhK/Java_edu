@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Homework2 {
     public static void main(String[] args) {
-        writerTxt();
-        //System.out.println(isPalindrom());
+        //writerTxt();
+        System.out.println(isPalindrom());
     }
 
     private static boolean isPalindrom() {
@@ -17,7 +17,7 @@ public class Homework2 {
         do {
             System.out.println("Введите слово или предложение: ");
             str = scanner.nextLine();
-        } while (str.length() == 0);
+        } while (str.isEmpty());
         scanner.close();
 
         str = str.toLowerCase().replace(" ", "");
