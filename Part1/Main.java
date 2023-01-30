@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //findMinMax();
-        //leapYear();
-        transposition();
+//        findMinMax();
+        System.out.println(isLeapYear() ? "Високосный год" : "Невисокосный год");
+//        transposition();
 
     }
 
@@ -21,42 +21,44 @@ public class Main {
         }
         System.out.println(Arrays.toString(array));
 
-        int l = 0;
-        int r = array.length - 1;
-        while (l <= r) {
-            if (array[l] == 3 && array[r] != 3) {
-                int temp = array[l];
-                array[l] = array[r];
-                array[r] = temp;
-                l++;
-                r--;
-            } else if (array[l] != 3) {
-                l++;
-            } else if (array[l] == 3 && array[r] ==3) {
-                r--;
+        int left = 0;
+        int right = array.length - 1;
+        int value = 3;
+        while (left < right) {
+            if (array[left] == value && array[right] != value) {
+                array[left] = array[right];
+                array[right] = value;
+                left++;
+                right--;
+            } else if (array[left] != value) {
+                left++;
+            } else if (array[left] == value && array[right] == value) {
+                right--;
             }
         }
         System.out.println(Arrays.toString(array));
     }
 
-    private static void leapYear() {
-
+    private static int getYear() {
         while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Введите год: ");
                 int year = Integer.parseInt(scanner.nextLine());
                 scanner.close();
-                boolean isLeapYear;
-                isLeapYear = ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
-                System.out.println(isLeapYear);
-                break;
+                return year;
             } catch (NumberFormatException e) {
                 System.out.println("Неверный формат");
             }
         }
     }
 
+    private static boolean isLeapYear() {
+
+        int year = getYear();
+
+        return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+    }
 
 
     private static void findMinMax() {
@@ -70,10 +72,10 @@ public class Main {
         int maxValue = array[0];
 
         for (int num : array) {
-            if (minValue < num) {
+            if (num < minValue) {
                 minValue = num;
             }
-            if (maxValue > num) {
+            if (num > maxValue) {
                 maxValue = num;
             }
         }
