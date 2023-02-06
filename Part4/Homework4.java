@@ -1,12 +1,24 @@
 package sem4;
 
-import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class Homework4 {
     public static void main(String[] args) {
-        stack();
+        //stack();
+        reverseList();
+    }
+
+    private static void reverseList() {
+        List<String> towns = new LinkedList<>();
+        Collections.addAll(towns, "Астрахань", "Барнаул", "Волгоград", "Горно-Алтайск", "Дубна", "Мурманск", "Якутск");
+        System.out.println(towns);
+        Stack<String> stackTowns = new Stack<>();
+        stackTowns.addAll(towns);
+        towns.clear();
+        while (!stackTowns.empty()) {
+            towns.add(stackTowns.pop());
+        }
+        System.out.println(towns);
     }
 
     private static void stack() {
