@@ -1,9 +1,7 @@
 package sem6;
 import sem6.Laptop;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class LaptopFilter {
 
@@ -13,6 +11,7 @@ public class LaptopFilter {
     }
 
     public List<Laptop> filterByModel(String model){
+
         List<Laptop> result = new LinkedList<>();
         for (Laptop lap : laptops) {
             if (lap.getModel().equals(model)){
@@ -21,7 +20,6 @@ public class LaptopFilter {
         }
         return result;
     }
-
     public List<Laptop> filterByBrand(String brand){
         List<Laptop> result = new LinkedList<>();
         for (Laptop lap : laptops) {
@@ -32,20 +30,50 @@ public class LaptopFilter {
         return result;
     }
 
-    public List<Laptop> filterByScreenDiagonal(double min, double max){
+    public List<Laptop> filterByProcessor(String processor){
         List<Laptop> result = new LinkedList<>();
         for (Laptop lap : laptops) {
-            if (min <= lap.getScreenDiagonal() && lap.getScreenDiagonal() <= max){
+            if (lap.getProcessorManufacturer().equals(processor)){
                 result.add(lap);
             }
         }
         return result;
     }
 
-    public List<Laptop> filterByNumberOfCores(int min, int max){
+    public List<Laptop> filterByColor(String color){
         List<Laptop> result = new LinkedList<>();
         for (Laptop lap : laptops) {
-            if (min <= lap.getNumberOfCores() && lap.getNumberOfCores() <= max){
+            if (lap.getColor().equals(color)){
+                result.add(lap);
+            }
+        }
+        return result;
+    }
+
+    public List<Laptop> filterByScreenDiagonal(double[] arr){
+        List<Laptop> result = new LinkedList<>();
+        for (Laptop lap : laptops) {
+            if (arr[0] <= lap.getScreenDiagonal() && lap.getScreenDiagonal() <= arr[1]){
+                result.add(lap);
+            }
+        }
+        return result;
+    }
+
+    public List<Laptop> filterByNumberOfCores(int[] arr){
+        List<Laptop> result = new LinkedList<>();
+        for (Laptop lap : laptops) {
+            if (arr[0] <= lap.getNumberOfCores() && lap.getNumberOfCores() <= arr[1]){
+                result.add(lap);
+            }
+        }
+        return result;
+    }
+
+    public List<Laptop> filterByRAM(int[] arr){
+        List<Laptop> result = new LinkedList<>();
+        for (Laptop lap : laptops) {
+            if (arr[0] <= lap.getRam() && lap.getRam() <= arr[1]){
                 result.add(lap);
             }
         }
