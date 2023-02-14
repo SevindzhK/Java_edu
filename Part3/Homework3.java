@@ -81,17 +81,8 @@ public class Homework3 {
             planetCount.replace(planet,1);
         }
 
-        for (String planet : planetCount.keySet()) {
-            System.out.printf("%s\t%s%n", planet, planetCount.get(planet));
-        }
-
         List<String> planetsOneByOne = new ArrayList<>();
         planetsOneByOne.addAll(planetCount.keySet());
         System.out.println(planetsOneByOne);
     }
 }
-
-
-
-
-
