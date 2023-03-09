@@ -3,6 +3,7 @@ package notebook.model;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import static notebook.model.UtilsModel.isEmptyLine;
 
 public class FileOperationImpl implements FileOperation {
 
@@ -17,9 +18,7 @@ public class FileOperationImpl implements FileOperation {
         }
     }
 
-    public boolean isEmptyLine(String line) {
-        return line == null || line.isEmpty();
-    }
+
     public List<String> readAllLines() {
 
         List<String> lines = new ArrayList<>();

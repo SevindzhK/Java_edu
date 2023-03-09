@@ -1,7 +1,5 @@
 package notebook.model;
 
-import java.util.Date;
-
 public class Note {
     private String id = "";
     private String date;

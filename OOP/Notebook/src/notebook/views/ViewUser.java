@@ -2,8 +2,11 @@ package notebook.views;
 
 import notebook.controllers.Controller;
 import notebook.model.Note;
+
+
 import java.util.List;
-import java.util.Scanner;
+
+import static notebook.views.UtilsView.prompt;
 
 public class ViewUser {
 
@@ -65,7 +68,9 @@ public class ViewUser {
     private void caseCreate() {
 
         String header = prompt("Введите заголовок заметки: ");
+        if (header.equals("")) {header = "Без заголовка";}
         String text = prompt("Введите текст заметки: ");
+        if (text.equals("")) {text = "Здесь пока ничего нет";}
         controller.saveNote(new Note(header, text));
     }
 
@@ -96,11 +101,5 @@ public class ViewUser {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private String prompt(String message) {
-        Scanner in = new Scanner(System.in);
-        System.out.print(message);
-        return in.nextLine();
     }
 }
