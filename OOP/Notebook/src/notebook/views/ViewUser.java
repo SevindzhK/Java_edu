@@ -2,8 +2,6 @@ package notebook.views;
 
 import notebook.controllers.Controller;
 import notebook.model.Note;
-
-
 import java.util.List;
 import java.util.Scanner;
 

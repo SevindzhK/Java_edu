@@ -1,8 +1,4 @@
-2;second;my second note
+1;Thu Mar 09 13:31:29 MSK 2023;Сходить в магазин ;хлеб, молоко, яйца
 
-3;third;my 3 note
-
-4;4 note;my 4 note
-
-5;last;my 5 note
+2;Thu Mar 09 13:32:16 MSK 2023;посмотреть лекцию ;Гибкие методологии 
 

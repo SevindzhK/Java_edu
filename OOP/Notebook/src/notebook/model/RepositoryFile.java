@@ -1,6 +1,7 @@
 package notebook.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static jdk.nashorn.internal.objects.NativeString.indexOf;
@@ -39,6 +40,10 @@ public class RepositoryFile implements Repository {
         int newId = max + 1;
         String id = String.format("%d", newId);
         note.setId(id);
+
+        Date dateTime = new Date();
+        note.setDate(dateTime.toString());
+
         notes.add(note);
         saveRepository(notes);
     }

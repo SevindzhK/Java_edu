@@ -4,11 +4,13 @@ import java.util.Date;
 
 public class Note {
     private String id = "";
+    private String date;
     private String header;
     private String text;
 
-    public Note(String id, String header, String text) {
+    public Note(String id, String date, String header, String text) {
         this.id = id;
+        this.date = date;
         this.header = header;
         this.text = text;
     }
@@ -24,6 +26,14 @@ public class Note {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getHeader() {
@@ -45,6 +55,7 @@ public class Note {
     @Override
     public String toString() {
         return System.lineSeparator() + "Note: " + "id = '" + id + "'" + System.lineSeparator() +
+                "date: '" + date + "'" + System.lineSeparator() +
                 "header: '" + header + "'" + System.lineSeparator() +
                 "text: '" + text + "'";
     }
